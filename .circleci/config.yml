@@ -1,0 +1,15 @@
+version 2.1 #CircleCi version latest
+
+workflow:
+  test-deploy:
+      jobs:
+       -test
+
+jobs:
+  test: #Name of the job
+    docker: #Copied from https://circleci.com/developer/images/image/cimg/python
+      - image: cimg/python:3.10.2
+    steps:
+      - checkout
+      - run: python --version
+  
